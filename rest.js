@@ -15,3 +15,19 @@ date: "3.4.93", score: "5", }, { date: "15.9.22", score: "4", }, ], }, { name:
 "Moon sushi", city: "Tel Aviv", street: "Yermiyahu", coordinates: [153, 4550],
 cuisine: "Vegan", kosher: false, reviews: [ { date: "1.5.28", score: "5", }, {
 date: "1.5.20", score: "2", }, { date: "1.4.12", score: "3", }, ], }, ]; )`;
+
+db.rest.find().pretty();
+db.rest.find({ cuisine: "Vegan" }).pretty();
+db.rest.find({ kosher: true }).pretty();
+db.rest.find({ city: "Tel Aviv" }).pretty();
+db.rest.find({ street: "Moria 12" }).pretty();
+db.rest.find({ coordinates: [153, 4550] }).pretty();
+db.rest.updateOne({ name: "416" }, { $set: { name: "Anastasia" } });
+db.rest.updateOne({ kosher: false }, { $set: { kosher: true } });
+db.rest.find().forEach((s) => printjson(`the restaurant's name is ${s.name}`));
+db.rest.find().forEach((s) => printjson(`the restaurant's city is ${s.city}`));
+db.rest
+  .find()
+  .forEach((s) =>
+    printjson(`the restaurant's coordinates are ${s.coordinates}`)
+  );
