@@ -13,7 +13,8 @@ Shaker", city: "Haifa", street: "Down town", coordinates: [153, 4550], cuisine:
 cuisine: "Italian", kosher: false, reviews: [ { date: "5.4.5", score: "5", }, {
 date: "3.4.93", score: "5", }, { date: "15.9.22", score: "4", }, ], }, { name:
 "Moon sushi", city: "Tel Aviv", street: "Yermiyahu", coordinates: [153, 4550],
-cuisine: "Vegan", kosher: false, reviews: [ { date: "1.5.28", score: "5", }, {
+        date: "1.5.20",
+        cuisine: "Vegan", kosher: false, reviews: [ { date: "1.5.28", score: "5", }, {
 date: "1.5.20", score: "2", }, { date: "1.4.12", score: "3", }, ], }, ]; )`;
 
 db.rest.find().pretty();
